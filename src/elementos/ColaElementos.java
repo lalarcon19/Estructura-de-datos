@@ -28,11 +28,9 @@ public class ColaElementos {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    public boolean vacia(){
-        return inicio == null && fin == null;
-    }
+
     public void encolar(int dato){
-        if(vacia()){
+        if(inicio == null && fin == null){
             inicio = fin = new Nodo(dato, null);
         }else {
             Nodo nuevo = new Nodo(dato, null);
@@ -44,7 +42,7 @@ public class ColaElementos {
 
     public String mostrarCola(){
         String salida = "";
-        if (!vacia()){
+        if (inicio != null && fin != null){
             Nodo aux = inicio;
             while(aux!=null){
                 salida += aux.getElemento()+"\n";

@@ -40,12 +40,9 @@ public class PilaElementos {
     public String ultimoElemento(){
         return "El ultimo elemento ingresado es:\n" + cima.getElemento();
     }
-
-    public boolean vacia(){
-        return cima == null;
-    }
+    
     public String eliminar(){
-        if (!vacia()){
+        if (cima != null){
             cima = cima.getSiguiente();
             tamano--;
         }
